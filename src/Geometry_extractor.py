@@ -5,18 +5,6 @@
 
 RESPONSIBILITY:
   Compute geometric measurements from MediaPipe face landmarks.
-  Nothing else — no image manipulation, no cropping, no VLM.
-
-WHY SEPARATE FROM face_section_builder.py?
-  Building image sections and computing facial geometry are
-  two different responsibilities that will grow independently:
-
-  face_section_builder.py → grows when we add new image layouts,
-                             profile handling, merge strategies.
-
-  geometry_extractor.py   → grows when we add new measurements,
-                             3D depth features (landmark.z),
-                             new book features requiring calculation.
 
 INPUT:
   crop_landmarks : List[Tuple[int, int]]
